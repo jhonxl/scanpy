@@ -23,14 +23,24 @@ def scanear_portas(host, portasAlvo):
 
 if __name__ == "__main__":
     print('Bem-vindo ao scanner de portas abertas.')
-    targets = input("Digite os hosts (ex: 192.168.0.1, 192.168.0.2): ").strip()
-    if not targets:
-        print("[ERRO] Nenhum host informado. Saindo...")
-        exit(1)
-
-    lista_ips = [ip.strip() for ip in targets.split(",")]
-
     portasAlvo = [21, 22, 23, 25, 53, 80, 110, 139, 143, 443, 445, 3306, 3389, 5432, 5900, 6379, 8080]
 
-    for ip in lista_ips:
-        scanear_portas(ip, portasAlvo)
+    while True:
+        targets = input("\nDigite os hosts (ex: 192.168.0.1, 192.168.0.2): ").strip()
+        if not targets:
+            print("[ERRO] Nenhum host informado. Saindo...")
+            break
+
+        lista_ips = [ip.strip() for ip in targets.split(",")]
+
+        for ip in lista_ips:
+            scanear_portas(ip, portasAlvo)
+
+        
+        print("\nO que deseja fazer agora?")
+        print("1. Realizar novo scan")
+        print("2. Sair")
+        escolha = input("R: ").strip()
+        if escolha != '1':
+            print("Encerrando o programa. Até mais!")
+            break

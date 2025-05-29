@@ -27,8 +27,8 @@ Este é um scanner de portas TCP simples feito em Python. Ele permite verificar 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/port-scanner.git
-   cd port-scanner
+   git clone https://github.com/jhonxl/scanpy
+   cd scanpy
    ```
 
 2. Execute o script:
